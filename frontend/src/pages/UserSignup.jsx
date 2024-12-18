@@ -1,7 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const UserSignup = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [userData, setUserData] = useState({});
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    setUserData({
+      username: {
+        firstName: firstName,
+        lastName: lastName,
+      },
+      email: email,
+      password: password,
+    });
+    console.log(userData);
+    setEmail("");
+    setPassword("");
+    setFirstName("");
+    setLastName("");
+  };
   return (
     <div className="p-7 h-screen flex flex-col justify-between">
       <div>
@@ -22,18 +44,30 @@ const UserSignup = () => {
               className="bg-[#eeeeee] w-1/2 rounded px-4 py-2 border text-lg placeholder:text-base"
               type="text"
               placeholder="First name"
+              value={firstName}
+              onChange={(e) => {
+                setFirstName(e.target.value);
+              }}
             />
             <input
               required
               className="bg-[#eeeeee] w-1/2 rounded px-4 py-2 border text-lg placeholder:text-base"
               type="text"
               placeholder="Last name"
+              value={lastName}
+              onChange={(e) => {
+                setLastName(e.target.value);
+              }}
             />
           </div>
           <h3 className="text-lg font-medium mb-2">What's your Email?</h3>
           <input
             required
             className="bg-[#eeeeee] mb-6 rounded px-4 py-2 border w-full text-lg placeholder:text-base"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
             type="email"
             placeholder="email@example.com"
           />
@@ -41,6 +75,10 @@ const UserSignup = () => {
           <input
             required
             className="bg-[#eeeeee] mb-6 rounded px-4 py-2 border w-full text-lg placeholder:text-base"
+            value={password}
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
             type="password"
             placeholder="password"
           />
