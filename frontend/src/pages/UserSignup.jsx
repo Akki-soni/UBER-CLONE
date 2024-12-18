@@ -15,7 +15,7 @@ const UserSignup = () => {
             submitHandler(e);
           }}
         >
-          <h3 className="text-base font-medium mb-2">What's your name</h3>
+          <h3 className="text-lg font-medium mb-2">What's your name</h3>
           <div className="flex gap-4 mb-6">
             <input
               required
@@ -30,14 +30,14 @@ const UserSignup = () => {
               placeholder="Last name"
             />
           </div>
-          <h3 className="text-base font-medium mb-2">What's your Email?</h3>
+          <h3 className="text-lg font-medium mb-2">What's your Email?</h3>
           <input
             required
             className="bg-[#eeeeee] mb-6 rounded px-4 py-2 border w-full text-lg placeholder:text-base"
             type="email"
             placeholder="email@example.com"
           />
-          <h3 className="text-base font-medium mb-2">Enter Password</h3>
+          <h3 className="text-lg font-medium mb-2">Enter Password</h3>
           <input
             required
             className="bg-[#eeeeee] mb-6 rounded px-4 py-2 border w-full text-lg placeholder:text-base"
@@ -49,19 +49,18 @@ const UserSignup = () => {
           </button>
         </form>
         <p className="text-center">
-          New here?{" "}
-          <Link to="/signup" className="text-blue-600">
-            Create new Account
+          Account have a account?{" "}
+          <Link to="/login" className="text-blue-600">
+            Login here
           </Link>
         </p>
       </div>
       <div>
-        <Link
-          to="/captain-login"
-          className="bg-[#10b461] flex items-center justify-center text-white font-semibold mb-5 rounded px-4 py-2 w-full text-lg placeholder:text-base"
-        >
-          Sign in as Captain
-        </Link>
+        <p className="text-[10px] leading-tight">
+          By proceeding, you consent to get calls,WhatsApp or SMS messages,
+          including by automated means, from Uber and its affiliates to the
+          number provided.
+        </p>
       </div>
     </div>
   );
