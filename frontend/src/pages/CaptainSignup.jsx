@@ -25,7 +25,7 @@ const CaptainSignup = () => {
     setLastName("");
   };
   return (
-    <div className="p-7 h-screen flex flex-col justify-between">
+    <div className="px-5 py-5 h-screen flex flex-col justify-between">
       <div>
         <img
           className="w-20 mb-3"
@@ -88,7 +88,7 @@ const CaptainSignup = () => {
         </form>
         <p className="text-center">
           Account have a account?{" "}
-          <Link to="/login" className="text-blue-600">
+          <Link to="/captain-login" className="text-blue-600">
             Login here
           </Link>
         </p>
