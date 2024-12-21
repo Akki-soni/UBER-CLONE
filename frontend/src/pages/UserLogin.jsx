@@ -14,6 +14,7 @@ const userLogin = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
+
     const userData = {
       email: email,
       password: password,
@@ -27,6 +28,7 @@ const userLogin = () => {
     if (response.status === 200) {
       const data = response.data;
       setUser(data.user);
+      localStorage.setItem("token", data.token);
       navigate("/home");
     }
     setEmail("");
